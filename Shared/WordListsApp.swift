@@ -13,14 +13,16 @@ struct WordListsApp: App {
         WindowGroup {
             ContentView()
         }.commands {
+            #if os(macOS)
             CommandGroup(after: .sidebar) {
                 Button(action: {
                     NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
                 }) {
                     Text("Toggle Sidebar")
+                    Divider()
                 }
-                Divider()
             }
+            #endif
         }
     }
 }

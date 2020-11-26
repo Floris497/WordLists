@@ -16,7 +16,7 @@ class WordlistData: ObservableObject {
     }
 
     func loadData() {
-        let url = URL(string: "http://macbook.local:8080/wordlists")!
+        let url = URL(string: "http://192.168.178.26:8080/wordlists")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
